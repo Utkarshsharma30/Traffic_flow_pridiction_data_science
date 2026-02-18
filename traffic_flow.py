@@ -7,24 +7,14 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 from sklearn.preprocessing import StandardScaler
 
-
-
-#------------------------------------------------------------------------------------------------------------------------
-
-
-
-# Load the dataset (replace 'your_dataset.csv' with the actual filename)
+# Load the dataset
 df = pd.read_csv('TrafficDataset.csv')
-
 # Display the first few rows of the dataframe
 df.head()
-
 # Checking the shape of the dataset
 df.shape
-
 # Checking the data types of the columns
 df.dtypes
-
 # Checking for unique values in the 'Time' column
 df['Time'].unique()
 
@@ -118,8 +108,8 @@ plt.show()
 
 
 # 5. Pairplot
-sns.pairplot(df[['Time', 'Day of the week', 'CarCount', 'BikeCount', 'BusCount', 'TruckCount', 'Total', 'Traffic Situation']])
-plt.show()
+#sns.pairplot(df[['Time', 'Day of the week', 'CarCount', 'BikeCount', 'BusCount', 'TruckCount', 'Total', 'Traffic Situation']])
+#plt.show()
 
 
 # Convert 'Traffic Situation' to categorical
@@ -188,3 +178,4 @@ feature_importances = pd.Series(model.feature_importances_, index=X.columns)
 feature_importances.nlargest(10).plot(kind='barh')
 plt.title('Feature Importance')
 plt.show()
+
